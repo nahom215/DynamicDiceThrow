@@ -57,6 +57,15 @@ class MainActivity : AppCompatActivity(), ButtonFragment.ButtonInterface {
                     .addToBackStack(null)
                     .commit()
             }
+
+            if (hasTwoColumns)
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container1, buttonFragment)
+                    .replace(R.id.container2, dieFragment)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit()
         }
     }
 
